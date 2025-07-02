@@ -53,7 +53,7 @@ To automatically install & run wg-easy, simply run:
   -e PASSWORD_HASH=<🚨YOUR_ADMIN_PASSWORD_HASH> \
   -e PORT=51821 \
   -e WG_PORT=51820 \
-  -v ~/.amnezia-wg-easy:/etc/wireguard \
+  -v ~/.amnezia-wg-easy:/etc/amnezia/amneziawg \
   -p 51820:51820/udp \
   -p 51821:51821/tcp \
   --cap-add=NET_ADMIN \
@@ -62,7 +62,7 @@ To automatically install & run wg-easy, simply run:
   --sysctl="net.ipv4.ip_forward=1" \
   --device=/dev/net/tun:/dev/net/tun \
   --restart unless-stopped \
-  ghcr.io/w0rng/amnezia-wg-easy
+  ghcr.io/danfocus/amnezia-wg-easy
 ```
 
 > 💡 Replace `YOUR_SERVER_IP` with your WAN IP, or a Dynamic DNS hostname.
@@ -128,7 +128,7 @@ To update to the latest version, simply run:
 ```bash
 docker stop amnezia-wg-easy
 docker rm amnezia-wg-easy
-docker pull ghcr.io/w0rng/amnezia-wg-easy
+docker pull ghcr.io/danfocus/amnezia-wg-easy
 ```
 
 And then run the `docker run -d \ ...` command above again.
